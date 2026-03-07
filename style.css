@@ -1,0 +1,25 @@
+:root { --pi: #6741d9; --gold: #ffa500; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f8f9fa; color: #333; }
+.navbar { background: var(--pi); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.user-pill { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; }
+.hero { background: var(--pi); color: white; text-align: center; padding: 40px 20px; }
+.hero-btns { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+.btn-primary { background: var(--gold); border: none; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-secondary { background: white; border: none; color: var(--pi); padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.search-area { max-width: 500px; margin: -25px auto 20px; padding: 0 15px; }
+#searchInput { width: 100%; padding: 15px; border-radius: 30px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); outline: none; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+.card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+.card-img { height: 180px; width: 100%; object-fit: cover; }
+.card-content { padding: 15px; }
+.price { font-size: 1.3rem; color: var(--pi); font-weight: bold; }
+.btn-buy { background: var(--pi); color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; cursor: pointer; margin-top: 10px; font-weight: bold; }
+.btn-chat { background: #eee; color: #333; border: none; width: 100%; padding: 8px; border-radius: 8px; cursor: pointer; margin-top: 5px; font-size: 0.8rem; }
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; }
+.modal-content { background: white; margin: 10% auto; padding: 25px; width: 85%; max-width: 400px; border-radius: 15px; }
+.modal-content input, select, textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; }
+.btn-submit { background: #27ae60; color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.close { float: right; font-size: 24px; cursor: pointer; }
+.tabs { text-align: center; margin-bottom: 10px; }
+.tab { padding: 8px 18px; margin: 5px; border: 1px solid var(--pi); border-radius: 20px; background: white; cursor: pointer; color: var(--pi); }
+.tab.active { background: var(--pi); color: white; }

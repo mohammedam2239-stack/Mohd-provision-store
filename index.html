@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZ ZAMAN CONCEPTS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AZ ZAMAN CONCEPTS</div>
+        <div id="user-display" class="user-pill">Syncing Pi...</div>
+    </nav>
+
+    <header class="hero">
+        <h1>Global Pi Marketplace</h1>
+        <div class="hero-btns">
+            <button class="btn-primary" onclick="toggleModal('postModal')">+ Sell Item</button>
+            <button class="btn-secondary" onclick="toggleModal('dashModal')">My Dashboard</button>
+        </div>
+    </header>
+
+    <section class="search-area">
+        <input type="text" id="searchInput" placeholder="Search properties or goods..." onkeyup="handleSearch()">
+    </section>
+
+    <main class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="filterItems('all')">All</button>
+            <button class="tab" onclick="filterItems('property')">Properties</button>
+            <button class="tab" onclick="filterItems('goods')">Goods</button>
+        </div>
+        <div id="app-grid" class="grid"></div>
+    </main>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal('postModal')">&times;</span>
+            <h3>Post New Listing</h3>
+            <form id="postForm">
+                <input type="text" id="pTitle" placeholder="Item Name" required>
+                <input type="number" id="pPrice" placeholder="Price in Pi" step="0.01" required>
+                <select id="pType">
+                    <option value="property">Property</option>
+                    <option value="goods">Goods/Services</option>
+                </select>
+                <label>Gallery Image:</label>
+                <input type="file" id="pFile" accept="image/*" required onchange="preview(event)">
+                <img id="pPreview" style="display:none; width:100%; border-radius:8px; margin:10px 0;">
+                <textarea id="pDesc" placeholder="Brief description..."></textarea>
+                <button type="submit" id="submitBtn" class="btn-submit">Publish to Market</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal('dashModal')">&times;</span>
+            <h3>Your Listings</h3>
+            <div id="user-listings"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
